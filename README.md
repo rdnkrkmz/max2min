@@ -2,13 +2,14 @@
 This is a custom aggregate extension for PostgreSQL
 
 ## 
-The aggregate function returns a text formatted like: max -> min for an integer column, where min and max are minimum and maximum values of that column. 
+The aggregate function returns a text formatted like: **max -> min** for an integer column, where min and max are minimum and maximum values of that column. 
 Extension handles ```null``` values in rowset.
 
 ## Installation
 ```
 git clone https://github.com/rdnkrkmz/max2min.git
 cd max2min
+make install
 make installcheck
 ```
 ## Supported data types
@@ -25,7 +26,7 @@ select max_to_min(val) from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
 ```
 #### custom delimiter
 ```
-select max_to_min(val, ' =8> ') from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
+select max_to_min(val, ' <3 ') from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
 ```
 #### numeric, integer, float
 ```
