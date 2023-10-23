@@ -1,5 +1,5 @@
 -- complain if script is sourced in psql, rather than via CREATE EXTENSION
-\echo Use "CREATE EXTENSION pair" to load this file. \quit
+\echo Use "CREATE EXTENSION max2min" to load this file. \quit
 
 -- defining 4 type we can support aggregation of 
 	-- numeric, integer, float
