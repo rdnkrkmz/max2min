@@ -23,18 +23,30 @@ date, time, timestamp
 #### without delimiter
 ```
 select max_to_min(val) from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
+ max_to_min 
+------------
+ 10 => 3
 ```
 #### custom delimiter
 ```
-select max_to_min(val, ' <3 ') from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
+select max_to_min(val, ' ==>> ') from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
+ max_to_min 
+------------
+ 10 ==>> 3
 ```
 #### numeric, integer, float
 ```
 select max_to_min(val, ' => ') from (values(5.0),(-6.9),(6),(7),(99.9),(11), (null),(7)) t(val);
+  max_to_min  
+--------------
+ 99.9 => -6.9
 ```
 #### char, varchar, text
 ```
 select max_to_min(val, ' => ') from (values('a'),('b'),('c'),('d'),('e'),('f'), (null),('g')) t(val);
+ max_to_min 
+------------
+ g => a
 ```
 #### timestamp with time zone
 ```
@@ -49,6 +61,9 @@ select max_to_min(val, ' => ') from (
     (null),
     (to_timestamp('2017-10-20 10:11:00', 'yyyy-mm-dd hh24:mi:ss')::timestamp with time zone)
 ) t(val);
+                          max_to_min                          
+--------------------------------------------------------------
+ Fri Oct 20 10:11:00 2023 PDT => Fri Oct 20 10:11:00 2017 PDT
 ```
 #### timestamp without time zone
 ```
@@ -63,6 +78,9 @@ select max_to_min(val, ' => ') from (
     (null),
     (to_timestamp('2017-10-20 10:11:00', 'yyyy-mm-dd hh24:mi:ss')::timestamp without time zone)
 ) t(val);
+                      max_to_min                      
+------------------------------------------------------
+ Fri Oct 20 10:11:00 2023 => Fri Oct 20 10:11:00 2017
 ```
 #### date
 ```
@@ -77,4 +95,7 @@ select max_to_min(val, ' => ') from (
     (null),
     (to_timestamp('2017-10-20', 'yyyy-mm-dd'))
 ) t(val);
+                          max_to_min                          
+--------------------------------------------------------------
+ Fri Oct 20 00:00:00 2023 PDT => Fri Oct 20 00:00:00 2017 PDT
 ```
