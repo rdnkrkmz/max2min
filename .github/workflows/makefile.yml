@@ -37,10 +37,10 @@ jobs:
         run: make install
 
       - name: make installcheck
-        run: grep "socket" /usr/lib/postgresql/data/postgresql.conf
+        run: make installcheck
         env:
           # The hostname used to communicate with the PostgreSQL service container
-          PGHOST: localhost
+          PGHOST: /var/run/postgresql/.s.PGSQL.5432
           # The default PostgreSQL port
           PGPORT: 5432
 #      - name: Connect to PostgreSQL
