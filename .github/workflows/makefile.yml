@@ -38,7 +38,11 @@ jobs:
 
       - name: make installcheck
         run: make installcheck
-        
+        env:
+          # The hostname used to communicate with the PostgreSQL service container
+          PGHOST: localhost
+          # The default PostgreSQL port
+          PGPORT: 5432
 #      - name: Connect to PostgreSQL
 #        # Runs a script that creates a PostgreSQL table, populates
 #        # the table with data, and then retrieves the data
