@@ -1,5 +1,6 @@
 # PostgreSQL Custom Aggregate
-This is a custom aggregate extension for PostgreSQL
+This is a custom aggregate extension for PostgreSQL <br><br>
+![example workflow](https://github.com/rdnkrkmz/max2min/actions/workflows/makefile.yml/badge.svg)
 
 ## 
 The aggregate function returns a text formatted like: **max -> min** for an integer column, where min and max are minimum and maximum values of that column. 
