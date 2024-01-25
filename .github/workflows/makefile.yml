@@ -40,7 +40,7 @@ jobs:
         run: make installcheck
         env:
           # The hostname used to communicate with the PostgreSQL service container
-          PGHOST: /var/run/postgresql/.s.PGSQL.5432
+          PGHOST: /var/run/postgresql
           # The default PostgreSQL port
           PGPORT: 5432
 #      - name: Connect to PostgreSQL
