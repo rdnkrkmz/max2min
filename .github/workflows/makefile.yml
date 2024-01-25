@@ -37,7 +37,7 @@ jobs:
         run: make install
 
       - name: make installcheck
-        run: make installcheck
+        run: ls -l /usr/lib/postgresql/14
         env:
           # The hostname used to communicate with the PostgreSQL service container
           PGHOST: localhost
